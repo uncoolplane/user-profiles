@@ -1,36 +1,27 @@
-<div>
+<form name="userForm" ng-show="editMode" ng-submit="CreateProfile(userForm.$valid)" novalidate>
 
-  <div class="header">
-    The Most Amazing Social Media Site Ever
-  </div>
-  
-  <div class="logo">
-    <a ui-sref="home">
-      <img src="../images/logo2.png" alt="logo" /> 
-    </a>   
-  </div>
-  
-  <div class="container">    
-    <div class="profile"> 
-      <ul>
-        <li class="bolded">{{ currentUser.name }}</li>
-      </ul>
-    </div>  
-
-
-    <div class="friends">
-      <ul ng-repeat="friend in friends">
-        <img ng-src="{{ friend.pic }}">
-        <li class="bolded">{{ friend.name }}</li>
-        <li>{{ friend.status }}</li>
-        <hr>
-      </ul>   
+    <div class="input-group">
+        <input type="text" class="form-control" name="fullname" placeholder="Full Name" ng-model="user.name" required ng-required="true">
+        <p ng-show="userForm.fullname.$invalid && !userForm.fullname.$pristine" class="help-block">You name is required.</p>
     </div>
-  </div>
-  
-  <!--
-  <div class="credit">
-    <p>Animal graphic by <a href="http://www.freepik.com/">Freepik</a> from <a href="http://www.flaticon.com/">Flaticon</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>. Made with <a href="http://logomakr.com" title="Logo Maker">Logo Maker</a></p>
-  </div>  
-  -->
-</div>
+    <div class="input-group">
+        <input type="text" class="form-control" name="password" ng-model="user.password" required ng-required="true">
+        <p ng-show="userForm.password.$invalid && !userform.password.$pristine" class="help-block">Your password is required</p>
+    </div>
+    <div class="input-group ">
+        <input type="text" class="form-control" name="pic" placeholder="Profile Image Url" ng-model="user.pic" required>
+        <p ng-show="userForm.pic.$invalid && !userForm.pic.$pristine" class="help-block">You picture is required.</p>
+    </div>
+    <div class="input-group">
+        <input type="text" class="form-control" name="status" placeholder="Tagline" ng-model="user.status" required>
+        <p ng-show="userForm.status.$invalid && !userForm.status.$pristine" class="help-block">You Tagline is required.</p>
+    </div>
+    <!-- <div class="input-group">
+        <textarea class="form-control" name="bio" placeholder="Bio" ng-model="user.bio">
+      </textarea>
+    </div> -->
+
+    <div class="input-group">
+        <input type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">
+    </div>
+</form>

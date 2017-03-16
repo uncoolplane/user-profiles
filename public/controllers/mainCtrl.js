@@ -3,8 +3,10 @@ angular.module('userProfiles')
 
 	$scope.login = function( user ) {
 		friendService.login(user).then(function( response ) {
-			if (response.data.userFound) {
-				$location.path('/profile');
+			console.log('mainCtrl [login]', response);
+			if (response.userFound) {
+				$scope.currentUser = response.user;
+				$location.path('/friends');
 			} else {
 				alert('user not found');
 			}

@@ -1,0 +1,76 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    /*position: relative;*/
+    width: 100%;
+    height: 100%;
+    font-family: Raleway, sans-serif
+}
+
+input {
+    width: 240px;
+    height: 25px;
+    border: 1px solid #06bbff;
+    margin-bottom: 10px;
+    font-family: Raleway, sans-serif;
+    padding-left: 2%
+}
+
+input[type=text]::-webkit-input-placeholder {
+    font-family: Raleway, sans-serif
+}
+
+input[type=password]::-webkit-input-placeholder {
+    font-family: Raleway, sans-serif
+}
+
+ .navbar-brand img {
+   display: inline-block;
+   height: 32px;
+ }
+
+.wrapper {
+    max-width: 650px;
+    margin: 200px auto
+}
+
+.wrapper img {
+    width: 300px;
+    height: 200px;
+    float: left;
+    margin: 0;
+    border: 2px solid #060606
+}
+
+.wrapper .login {
+  margin-left: 2em;
+    width: 280px;
+    height: 160px;
+    float: left;
+    padding-top: 40px;
+    padding-left: 20px;
+    background-color: #060606;
+    border: 2px solid #060606
+}
+
+.wrapper .login button {
+    background-color: #06bbff;
+    width: 80px;
+    height: 30px;
+    border: 0;
+    color: #fff;
+    font-family: Raleway, sans-serif;
+    font-weight: 700;
+    letter-spacing: .1em
+}
+
+.wrapper .login button a {
+    padding: 5px 15px;
+    text-decoration: none
+}
+
+.wrapper .login button a:hover {
+    color: #000
+}

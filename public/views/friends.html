@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <div class="profile">
+      <h2>{{ currentUser.name }}</h2>
+      <img ng-if="currentUser.pic" ng-src="{{currentUser.pic}}" alt="Picture">
+      <p>{{currentUser.status}}</p>
+    </div>
+  </div>
+  <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <div class="friends">
+      <ul ng-repeat="friend in friends">
+        <img ng-src="{{ friend.pic }}">
+        <li class="bolded">{{ friend.name }}</li>
+        <li>{{ friend.status }}</li>
+        <hr>
+      </ul>
+    </div>
+  </div>
+</div>

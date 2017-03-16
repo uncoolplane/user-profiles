@@ -2,7 +2,11 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var cors = require('cors');
+// const querystring = require('querystring');
+
 var config = require('./config');
+var profileCtrl = require('./controllers/profileCtrl');
+var userCtrl = require('./controllers/userCtrl');
 
 var app = express();
 var port = process.env.PORT || 8887;
@@ -16,19 +20,15 @@ app.use(session({
 }));
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
+app.use(express.static(__dirname + '/public'));
 
-app.get('/api/users', cors(), function(req, res, next) {
-  res.send('working');
-})
-
-app.post('/api/users', cors(), function(req, res, next) {
-  res.send('working');
-})
-
-app.put('/api/users', cors(), function(req, res, next) {
-  res.send('working');
-})
+app.post('/api/login', cors(), userCtrl.login);
+app.get('/api/login', cors(), userCtrl.getSessionUser);
+app.get('/api/profile/:name', cors(), profileCtrl.getProfile);
+app.get('/api/profiles', cors(), profileCtrl.getProfiles);
+app.get('/api/friends', cors(), profileCtrl.getFriendsProfiles);
 
 app.listen(port, function() {
-  console.log('Listening on port', port, 'for aliens');
+  console.log('app', 'Listening on port', port, 'for aliens');
+  console.log('app', __dirname);
 })

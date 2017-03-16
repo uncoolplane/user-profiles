@@ -53,6 +53,7 @@ module.exports = {
   getSessionUser: function(req, res) {
     var user = req.session.currentUser;
     console.log('userCtrl [getSessionUser]', user);
+
     if(user) {
       res.send({userFound: true, user: user});
     } else {

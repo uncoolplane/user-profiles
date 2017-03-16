@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html ng-app="userProfiles" lang="en">
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700,600' rel='stylesheet' type='text/css'>
-  <link rel='stylesheet' href='css/styles.css' type='text/css'>
-	<meta charset="UTF-8">
-	<title>User Profiles</title>
+  <!-- <link rel='stylesheet' href='css/styles.css' type='text/css'> -->
+  <link rel="stylesheet" href="/css/master.css" type="text/css">
+  <meta charset="UTF-8">
+	<title>Dev-Mt-In</title>
 </head>
 
 <body>
+  <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+                <a class="navbar-brand" ui-sref="home">
+                    <img src="../images/logo2.png" alt="logo" />
+                  Dev-Mt-In</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="friends">View Friends</a></li>
+                    <li><a ui-sref="profiles">Find Friends</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a ui-sref="myprofile">Profile</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<ui-view></ui-view>  
-  
+<div class="container">
+  <ui-view></ui-view>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-  
+
 <script src="./app.js"></script>
-<script src="./mainCtrl.js"></script>
-<script src="./profileCtrl.js"></script>
-<script src="./friendService.js"></script>
+
+<script src="./services/friendService.js"></script>
+
+<script src="./controllers/mainCtrl.js"></script>
+<script src="./controllers/friendsCtrl.js"></script>
+<script src="./controllers/profileCtrl.js"></script>
 
 </body>
 </html>

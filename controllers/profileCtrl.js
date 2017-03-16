@@ -17,6 +17,11 @@ var profiles = [{
         name: 'Lindsey Mayer',
         pic: 'https://s3.amazonaws.com/uifaces/faces/twitter/nzcode/128.jpg',
         status: 'OMG MITTENS DID THE CUTEST THING TODAY'
+    },
+    {
+      name: 'Becky Hall',
+      pic: 'https://s3.amazonaws.com/uifaces/faces/twitter/nzcode/128.jpg',
+      status: 'This is a test of the emergency broadcasting system'
     }
 ];
 
@@ -24,6 +29,21 @@ module.exports = {
     getProfiles: function(req, res) {
         console.log('profileCtrl [getProfiles]', profiles);
         res.send(profiles);
+    },
+    getProfile: function(req, res) {
+      var name = req.params.name.split('+').join(' ');
+      console.log(req.params, name);
+
+      var profile = {};
+      for(var i = 0; i < profiles.length; i++) {
+        // console.log('profiles[' + i + ']', profiles[i]);
+        if(profiles[i].name == name) {
+          profile = profiles[i];
+        }
+      }
+
+      console.log('profile-->', profile);
+      res.send(profile);
     },
     getFriendsProfiles: function(req, res) {
         var user = req.session.currentUser;

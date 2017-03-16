@@ -1,3 +1,3 @@
 module.exports = {
-	sessionSecret: 'keyboard cat'
+	sessionSecret: 'dev-mt-in'
 };

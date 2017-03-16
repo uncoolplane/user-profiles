@@ -8,9 +8,14 @@ angular.module('userProfiles', ['ui.router'])
 		templateUrl: './views/home.html',
 		controller: 'mainCtrl'
 	})
-	.state('profile', {
-		url: '/profile',
-		'templateUrl': './views/profile.html',
+	.state('friends', {
+		url: '/friends',
+		templateUrl: './views/friends.html',
+		controller: 'friendsCtrl'
+	})
+	.state('myprofile', {
+		url: '/myprofile',
+		templateUrl : './views/profile.html',
 		controller: 'profileCtrl'
 	});
 
